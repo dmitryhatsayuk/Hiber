@@ -12,6 +12,11 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Person implements Serializable {
+
+    private String name;
+    private String surname;
+    private int age;
+
     public String getSurname() {
         return surname;
     }
@@ -35,10 +40,6 @@ public class Person implements Serializable {
     public void setAge(int age) {
         this.age = age;
     }
-
-    private String name;
-    private String surname;
-    private int age;
 
 
 }

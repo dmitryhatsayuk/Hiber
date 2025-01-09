@@ -25,7 +25,7 @@ public class Controller {
         List<Persons> personsList = em.createQuery("select p from Persons p", Persons.class).getResultList();
         ArrayList<Persons> result = new ArrayList<>();
         for (Persons persons : personsList) {
-            if (persons.getCity_of_living().equals(city)) {
+            if (persons.getCity().equals(city)) {
                 result.add(persons);
             }
         }

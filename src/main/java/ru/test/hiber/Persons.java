@@ -11,20 +11,21 @@ import org.springframework.stereotype.Repository;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
 @Repository
 public class Persons {
 
-    public void setCity_of_living(String city_of_living) {
-        this.city_of_living = city_of_living;
+
+    private String phone_number;
+    private String city;
+    @EmbeddedId
+    private Person person;
+
+    public String getCity() {
+        return city;
     }
 
-    public Person getPerson() {
-        return person;
-    }
-
-    public void setPerson(Person person) {
-        this.person = person;
+    public void setCity(String city) {
+        this.city = city;
     }
 
     public String getPhone_number() {
@@ -35,12 +36,13 @@ public class Persons {
         this.phone_number = phone_number;
     }
 
-    private String phone_number;
-    private String city_of_living;
-    @EmbeddedId
-    private Person person;
-
-    public String getCity_of_living() {
-        return city_of_living;
+    public Person getPerson() {
+        return person;
     }
+
+    public void setPerson(Person person) {
+        this.person = person;
+    }
+
+
 }
