@@ -5,19 +5,22 @@ import jakarta.persistence.Entity;
 import lombok.*;
 import org.springframework.stereotype.Repository;
 
+
 @Entity
 @Getter
 @Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
 @Repository
 public class Persons {
 
-    public void setCity_of_living(String city_of_living) {
-        this.city_of_living = city_of_living;
-    }
+
+    @EmbeddedId
+
+    private Person person;
+    private String phone_number;
+    private String city;
 
     public Person getPerson() {
         return person;
@@ -35,12 +38,13 @@ public class Persons {
         this.phone_number = phone_number;
     }
 
-    private String phone_number;
-    private String city_of_living;
-    @EmbeddedId
-    private Person person;
-
-    public String getCity_of_living() {
-        return city_of_living;
+    public String getCity() {
+        return city;
     }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+
 }

@@ -5,20 +5,17 @@ import lombok.*;
 
 import java.io.Serializable;
 
-@Getter
+
 @Setter
+@Getter
 @Builder
 @Embeddable
 @AllArgsConstructor
 @NoArgsConstructor
 public class Person implements Serializable {
-    public String getSurname() {
-        return surname;
-    }
-
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
+    private String name;
+    private String surname;
+    private int age;
 
     public String getName() {
         return name;
@@ -28,6 +25,14 @@ public class Person implements Serializable {
         this.name = name;
     }
 
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
     public int getAge() {
         return age;
     }
@@ -35,10 +40,6 @@ public class Person implements Serializable {
     public void setAge(int age) {
         this.age = age;
     }
-
-    private String name;
-    private String surname;
-    private int age;
 
 
 }
